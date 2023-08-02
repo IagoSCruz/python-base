@@ -21,7 +21,7 @@ __license__ = "unlicense" # Dunder License
 
 import os     # Ler variáveis do ambiente
 
-current_language = os.getenv("LANG")[:5]
+current_language = os.getenv("LANG", "en_US")[:5]
 
 msg = 'Hello, World'
 

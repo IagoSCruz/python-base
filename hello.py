@@ -8,6 +8,9 @@ Como usar:
 Tenha a variável LANG devidamente configurada. Ex:
 
     export LANG=pt_BR
+    ou
+    No cmd, passar o seguinte valor:
+    LANG=pt_BR python3 nome_do_arquivo
 
 Execução:
 
@@ -29,6 +32,10 @@ if current_language == 'pt_BR':
     msg = 'Olá, Mundo!'
 elif current_language == 'it_IT':
     msg = 'Ciao, Mondo!'
+elif current_language == 'es_SP':
+    msg = 'Hola, Mundo!'
+elif current_language == 'fr_FR':
+    msg = 'Bonjour Monde!'
 
 
 print(msg)

@@ -23,6 +23,7 @@ __author__ = "Iago Cruz"  # Dunder Author
 __license__ = "unlicense" # Dunder License
 
 import os     # Ler variáveis do ambiente
+import sys
 
 current_language = os.getenv("LANG", "en_US")[:5]
 
@@ -32,7 +33,6 @@ msg = {
     "it_IT":"Ciao, Mondo!",
     "fr_FR":"Bonjour, Monde!"
 }
-
 
 print(msg[current_language])
 

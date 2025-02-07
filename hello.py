@@ -25,7 +25,28 @@ __license__ = "unlicense" # Dunder License
 import os     # Ler variáveis do ambiente
 import sys
 
-current_language = os.getenv("LANG", "en_US")[:5]
+arguments = {
+    "lang": None,
+    "count": 1
+}
+
+for args in sys.argv[1:]:
+    key, value = args.split('=')
+    key = key.lstrip('-').strip()
+    if key not in arguments:
+        print(f'Invalid Option: {key}')
+        sys.exit()                         # Forçar a parada do sistema
+    arguments[key] = value
+
+#current_language = os.getenv("LANG", "en_US")[:5]
+current_language = arguments["lang"]
+if current_language is None:
+    current_language = os.getenv("LANG")
+    # TODO: Usar laço de repetições
+if current_language is None:
+    current_language = input("Choose a Language: ")
+
+current_language = current_language[:5]
 
 msg = {
     "en_US":"Hello, World!",
@@ -34,6 +55,4 @@ msg = {
     "fr_FR":"Bonjour, Monde!"
 }
 
-print(msg[current_language])
-
-
+print(msg[current_language] * int(arguments["count"]))

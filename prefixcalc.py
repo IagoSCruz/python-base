@@ -25,7 +25,7 @@ n2: 4
 9
 """
 __version__ = "0.1.0"
-
+import os
 import sys
 
 arguments = sys.argv[1:]
@@ -70,4 +70,11 @@ elif operation == "mul":
 elif operation == "div":
     result = n1 / n2
 
+path = os.curdir
+filepath = os.path.join(path, "prefixcalc.log")
+
+with open(filepath, "a") as file:
+    file.write(f"\n{operation}, {n1}, {n2} = {result}\n")
+
 print(f"O resultado é {result}")
+

@@ -1,0 +1,6 @@
+olá, mundo
+Estamos aprendendo a manipular arquivos!
+Aqui estamos utilizando context manager
+Aqui estamos utilizando context manager
+Brasil
+Python é top!
